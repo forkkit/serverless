@@ -5,7 +5,7 @@ const path = require('path');
 const { expect } = require('chai');
 const fse = require('fs-extra');
 const { execSync } = require('../utils/child-process');
-const { serverlessExec } = require('../utils/misc');
+const serverlessExec = require('../serverless-binary');
 const { getTmpDirPath } = require('../utils/fs');
 
 const fixturePaths = {
@@ -44,7 +44,7 @@ describe('Integration test - Packaging', () => {
         Role: {
           'Fn::GetAtt': ['IamRoleLambdaExecution', 'Arn'],
         },
-        Runtime: 'nodejs10.x',
+        Runtime: 'nodejs12.x',
         Timeout: 6,
       },
       DependsOn: ['HelloLogGroup', 'IamRoleLambdaExecution'],
@@ -75,7 +75,7 @@ describe('Integration test - Packaging', () => {
         Role: {
           'Fn::GetAtt': ['IamRoleLambdaExecution', 'Arn'],
         },
-        Runtime: 'nodejs10.x',
+        Runtime: 'nodejs12.x',
         Timeout: 6,
       },
       DependsOn: ['HelloLogGroup', 'IamRoleLambdaExecution'],
@@ -109,7 +109,7 @@ describe('Integration test - Packaging', () => {
         Role: {
           'Fn::GetAtt': ['IamRoleLambdaExecution', 'Arn'],
         },
-        Runtime: 'nodejs10.x',
+        Runtime: 'nodejs12.x',
         Timeout: 6,
       },
       DependsOn: ['HelloLogGroup', 'IamRoleLambdaExecution'],

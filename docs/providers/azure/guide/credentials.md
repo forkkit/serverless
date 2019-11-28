@@ -48,7 +48,7 @@ This will give you a code and prompt you to visit [aka.ms/devicelogin](https://a
 $ az account list
 {
   "cloudName": "AzureCloud",
-  "id": "c6e5c9a2-a4dd-4c05-81b4-6bed04f913ea",
+  "id": "<subscriptionId>",
   "isDefault": true,
   "name": "My Azure Subscription",
   "registeredProviders": [],
@@ -93,16 +93,16 @@ Add the following environment variables to the shell session or CI/CD tool that 
 
 ```sh
 # bash
-export azureSubId='<subscriptionId>' # From step 3
-export azureServicePrincipalTenantId='<tenant>'
-export azureServicePrincipalClientId='<name>'
-export azureServicePrincipalPassword='<password>'
+export AZURE_SUBSCRIPTION_ID='<subscriptionId>' # From step 3
+export AZURE_TENANT_ID='<tenant>'
+export AZURE_CLIENT_ID='<name>'
+export AZURE_CLIENT_SECRET='<password>'
 ```
 
 ```powershell
 # PowerShell
-$env:azureSubId='<subscriptionId>' # From step 3
-$env:azureServicePrincipalTenantId='<tenant>'
-$env:azureServicePrincipalClientId='<name>'
-$env:azureServicePrincipalPassword='<password>'
+$env:AZURE_SUBSCRIPTION_ID='<subscriptionId>' # From step 3
+$env:AZURE_TENANT_ID='<tenant>'
+$env:AZURE_CLIENT_ID='<name>'
+$env:AZURE_CLIENT_SECRET='<password>'
 ```
